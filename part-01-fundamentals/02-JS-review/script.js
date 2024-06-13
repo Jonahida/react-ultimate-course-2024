@@ -1,3 +1,4 @@
+// Sample book data array containing multiple book objects
 const data = [
   {
     id: 1,
@@ -144,313 +145,171 @@ function getBook(id) {
 }
 
 // 18. Destructuring Objects and Arrays
+
+// Retrieve all books from data
 const books = getBooks();
-//books;
-//const book = getBook(2);
 
-//const title = book.title;
-//const author = book.author;
-//title;
-//author;
-//console.log(author, title);
+// Retrieve a specific book (e.g., book with ID 2)
+const book = getBook(2);
 
-//const book = getBook(2);
-//const { title, author } = book;
-//title;
-//author;
-//console.log(author, title);
+// Destructuring to extract specific properties from the book object
+const { title, author } = book;
 
-//const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
-//book;
-//const primaryGenre = genres[0];
-//const secondaryGenre = genres[1];
-//console.log(primaryGenre, secondaryGenre);
+// Access and log the extracted properties
+console.log(title);
+console.log(author);
 
-// 19.Rest/Spread Operator
+// 19. Rest/Spread Operator
+
+// Retrieve a specific book (e.g., book with ID 3)
 const book = getBook(3);
+
+// Destructuring to extract multiple properties from the book object
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
 
-//console.log(author, title, genres);
+// Log author, title, and genres of the book
+console.log(author, title, genres);
 
-//const primaryGenre = genres[0];
-//const secondaryGenre = genres[1];
+// Using array destructuring to extract primary and other genres
+// Option 1: Primary and secondary genre + rest of the genres
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
+console.log(primaryGenre, secondaryGenre, otherGenres);
 
-// 1)
-//const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
-//console.log(primaryGenre, secondaryGenre, otherGenres);
+// Option 2: Primary genre + rest of the genres
+const [primaryGenre, ...otherGenres] = genres;
+console.log(primaryGenre, otherGenres);
 
-// 2)
-//const [primaryGenre, ...otherGenres] = genres;
-//console.log(primaryGenre, otherGenres);
-
-// 3) ERROR
-// const [primaryGenre, ...otherGenres, secondaryGenre ] = genres;
-
-// WRONG
-//const newGenres = [genres, "epic fantasy"];
-
-// USING SPREAD
-//const newGenres = [...genres, "epic fantasy"];
-//newGenres;
-
-// WRONG UPDATE
-//const updatedBook = { book, moviePublicationDate: "2001-12-19" };
-
-// Update one field
-// const updatedBook = { book, moviePublicationDate: "2001-12-19" };
-
-// Update more than one field
-//const updatedBook = { book, moviePublicationDate: "2001-12-19", pages: 1210 };
-
-// WRONG - Update more than one field
-// const updatedBook = {
-//   pages: 1210,
-//   ...book,
-//   moviePublicationDate: "2001-12-19",
-// };
-
-// Update more than one field
-// const updatedBook = {
-//   ...book,
-//   // Adding a new property
-//   moviePublicationDate: "2001-12-19",
-//   // Overriding an existing porperty
-//   pages: 1210,
-// };
-
-// updatedBook;
+// Update genres array with a new genre using spread operator
+const newGenres = [...genres, "epic fantasy"];
+console.log(newGenres);
 
 // 20. Template Literals
-// const summary_singlequotes = '';
-// const summary_doublequotes = "";
-// const summary = `a book`;
 
-// Examples
-// const summary = `${title} is a book`;
-// const summary = `${title} is a book ${2 + 4}`;
-// const summary = `${title}, is a book`;
-// const summary = `${title}, a ${pages}-page long book, was written by ${author} and pubished in ${publicationDate}`;
-
-// const summary = `${title}, a ${pages}-page long book, was written by ${author} and pubished in ${
-//   publicationDate.split("-")[0]
-// }`;
-// summary;
+// Creating a summary string using template literals
+const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${
+  publicationDate.split("-")[0]
+}`;
+console.log(summary);
 
 // 21. Ternaries Instead of if/else Statements
-// const pagesRange = pages > 1000 ? "over a thusand" : "less than 1000";
-// pagesRange;
-// console.log(`The book has ${pagesRange} pages`);
 
-// const summary = `${title}, a ${pages}-page long book, was written by ${author} and pubished in ${
-//   publicationDate.split("-")[0]
-// }. The book has ${hasMovieAdaptation ? "" : "not "}been adapted as a movie`;
-// summary;
+// Using a ternary operator to determine pages range
+const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
+console.log(`The book has ${pagesRange} pages`);
+
+// Including adaptation status in the summary using ternary operator
+const summaryWithAdaptation = `${title}, a ${pages}-page long book, was written by ${author} and published in ${
+  publicationDate.split("-")[0]
+}. The book has ${hasMovieAdaptation ? "" : "not "}been adapted as a movie`;
+console.log(summaryWithAdaptation);
 
 // 22. Arrow Functions
-// function getYear(str) {
-//   return str.split("-")[0];
-// }
-// console.log(getYear(publicationDate));
 
-// Examples
-// (str) => str.split("-")[0];
-// (str, a, b) => str.split("-")[0];
-
-// const getYear = (str) => str.split("-")[0];
-// console.log(getYear(publicationDate));
-
-// const getYear = (str) => {
-//   // whatever
-//   return str.split("-")[0];
-// };
-
-// const getYear = (str) => str.split("-")[0];
-// console.log(getYear(publicationDate));
-// const summary_singlequotes = "";
-// const summary_doublequotes = "";
-// const summary = `${title}, a ${pages}-page long book, was written by ${author} and pubished in ${getYear(
-//   publicationDate
-// )}. The book has ${hasMovieAdaptation ? "" : "not "}been adapted as a movie`;
+// Arrow function to extract the year from publicationDate
+const getYear = (str) => str.split("-")[0];
+console.log(getYear(publicationDate));
 
 // 23. Short-Circuiting And Logical Operators: &&, ||, ??
 
-// Examples
-// console.log(true && "Some string");
-// console.log(false && "Some string");
-// console.log(hasMovieAdaptation && "This book has a movie");
-
-// falsy: 0, "", null, undefined
-// console.log("Jonas" && "Some string");
-// console.log(0 && "Some string");
-// console.log(true || "Some string");
-// console.log(false || "Some string");
-
-// undefined
-//console.log(book.translations.spanish);
-// const spanishTranslation = book.translations.spanish || "NOT TRANSLATED";
-// spanishTranslation;
-
-// console.log(book.reviews.librarything.reviewsCount);
-// const countWrong = book.reviews.librarything.reviewsCount || "no data";
-// countWrong;
+// Using logical operators && and ||
+console.log(hasMovieAdaptation && "This book has a movie");
 
 // Nullish Coalescing Operator
-// It will only return the second value when the first value is null or undefined,
-// but not when it is zero or an empty string.
-// console.log(book.reviews.librarything.reviewsCount);
-// const count = book.reviews.librarything.reviewsCount ?? "no data";
-// count;
+// Safely accessing potentially undefined properties
+const count = book.reviews.librarything?.reviewsCount ?? "no data";
+console.log(count);
 
-// // 24. Optional Chaining
-// function getTotalReviewCount(book) {
-//   const goodreads = book.reviews.goodreads.reviewsCount;
-//   const librarything = book.reviews.librarything.reviewsCount;
-//   return goodreads + librarything;
-// }
+// 24. Optional Chaining
 
-// console.log(getTotalReviewCount(book));
+// Function to calculate total review count using optional chaining
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews?.goodreads?.reviewsCount ?? 0;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  return goodreads + librarything;
+}
 
-// Using getBook(3) -> Cannot read properties of undefined (reading 'reviewsCount')
-// and to fix it up!
-//const librarything = book.reviews.librarything.reviewsCount;
+console.log(getTotalReviewCount(book));
 
-// using nullish coalescing operator
-// const librarything = book.reviews.librarything?.reviewsCount ?? 0;
+// 25. The Array map Method
 
-// const goodreads = book.reviews?.goodreads?.reviewsCount;
-// const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
-// goodreads;
-// librarything;
+// Using map to extract an array of titles from books
+const titles = books.map((book) => book.title);
+console.log(titles);
 
-// // 25. The Array map Method
-// const x = [1, 2, 3, 4, 5].map((el) => el * 2);
-// console.log(x);
-
-// const titles = books.map((book) => book.title);
-// console.log(titles);
-
-// // WRONG
-// // const essentialData = books.map((book) => {
-// //   x: 23;
-// // });
-
-// // USE THIS
-// const essentialData = books.map((book) => {
-//   return {
-//     title: book.title,
-//     author: book.author,
-//   };
-// });
-// console.log(essentialData);
-
-// const essentialData2 = books.map((book) => ({
-//   title: book.title,
-//   author: book.author,
-// }));
-// console.log(essentialData2);
-
-// function getTotalReviewCount(book) {
-//   const goodreads = book.reviews?.goodreads?.reviewsCount;
-//   const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
-//   return goodreads + librarything;
-// }
-
-// const essentialData3 = books.map((book) => {
-//   return {
-//     title: book.title,
-//     author: book.author,
-//     reviewsCount: getTotalReviewCount(book),
-//   };
-// });
-// console.log(essentialData3);
+// Creating essentialData array with title, author, and reviewsCount
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+  reviewsCount: getTotalReviewCount(book),
+}));
+console.log(essentialData);
 
 // 26. The Array filter Method
-// const longBooks = books.filter((book) => book.pages > 500);
-// longBooks;
 
-// const longBooksWithMovie = books
-//   .filter((book) => book.pages > 500)
-//   .filter((book) => book.hasMovieAdaptation);
-// longBooksWithMovie;
+// Filtering books to find those with more than 500 pages
+const longBooks = books.filter((book) => book.pages > 500);
+console.log(longBooks);
 
-// const adventureBooks = books
-//   .filter((books) => books.genres.includes("adventure"))
-//   .map((book) => book.title);
-// adventureBooks;
+// Filtering long books that also have movie adaptations
+const longBooksWithMovie = books.filter(
+  (book) => book.pages > 500 && book.hasMovieAdaptation
+);
+console.log(longBooksWithMovie);
 
 // 27. The Array reduce Method
-// const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
-// pagesAllBooks;
 
-// // 28. The Array sort Method
-// const x = [3, 7, 1, 9, 6];
+// Using reduce to calculate total pages of all books
+const totalPages = books.reduce((sum, book) => sum + book.pages, 0);
+console.log(totalPages);
 
-// // Using original array
-// const sortedX = x.sort((a, b) => a - b);
-// sortedX;
+// 28. The Array sort Method
 
-// // Using copy of the original array
-// const arr = [3, 7, 1, 9, 6];
-// const sortedArr = arr.slice().sort((a, b) => a - b);
-// sortedArr;
-// arr;
+// Sorting books by pages in descending order
+const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+console.log(sortedByPages);
 
-// Sort by the number of pages
-// Descendant
-// const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
-// // Ascendant
-// //const sortedByPages = books.slice().sort((a, b) => a.pages - b.pages);
-// sortedByPages;
+// 29. Working With Immutable Arrays
 
-// // 29. Working With Immutable Arrays
-// // 1) Add book object to array
-// const newBook = {
-//   id: 6,
-//   title: "Harry Potter and th Chamber of Secrets",
-//   author: "J. K. Rowling",
-// };
+// Adding a new book object to the array without mutating original array
+const newBook = {
+  id: 6,
+  title: "Harry Potter and the Chamber of Secrets",
+  author: "J. K. Rowling",
+};
 
-// const booksAfterAdd = [...books, newBook];
-// booksAfterAdd;
+const booksAfterAdd = [...books, newBook];
+console.log(booksAfterAdd);
 
-// const booksAfterAdd2 = [newBook, ...books];
-// booksAfterAdd2;
+// Removing a book object from the array without mutating original array
+const booksAfterDelete = books.filter((book) => book.id !== 3);
+console.log(booksAfterDelete);
 
-// // 2) Delete book object from array
-// const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
-// booksAfterDelete;
-
-// // 3) Update book object in the array but returns an empty object
-// // const booksAfterUpdate = booksAfterDelete.map((book) =>
-// //   book.id === 1 ? {} : book
-// // );
-
-// // Update book object in the array
-// const booksAfterUpdate = booksAfterDelete.map((book) =>
-//   book.id === 1 ? { ...book, pages: 1 } : book
-// );
-
-// booksAfterUpdate;
+// Updating a book object in the array without mutating original array
+const booksAfterUpdate = books.map((book) =>
+  book.id === 1 ? { ...book, pages: 1 } : book
+);
+console.log(booksAfterUpdate);
 
 // 30. Asynchronous JavaScript: Promises
-// fetch("https://jsonplaceholder.typicode.com/todos/");
-// console.log(fetch("https://jsonplaceholder.typicode.com/todos/"));
 
-// // Using fetch().then()
-// fetch("https://jsonplaceholder.typicode.com/todos/")
-//   .then((res) => res.json())
-//   .then((data) => console.log(data));
-// console.log("Jonas");
+// Using fetch().then() to fetch todos from an API
+fetch("https://jsonplaceholder.typicode.com/todos/")
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error("Error fetching todos:", error));
 
 // 31. Asynchronous JavaScript: Async/Await
-// Using async functions and await
-// async function getTodos() {
-//   const res = await fetch("https://jsonplaceholder.typicode.com/todos/");
-//   const data = await res.json();
-//   console.log(data);
-//   return data;
-// }
-// const todos = getTodos();
-// console.log(todos);
-// console.log("Jonas");
+
+// Using async/await to fetch todos from an API
+async function getTodos() {
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/todos/");
+    const data = await res.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error fetching todos:", error);
+  }
+}
+
+getTodos();

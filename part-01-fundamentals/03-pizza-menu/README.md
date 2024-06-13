@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# React Pizza Co. Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+- [Screenshot](#screenshot)
+- [Overview](#overview)
+- [Code Structure](#code-structure)
+  - [Pizza Data](#pizza-data)
+  - [Components](#components)
+    - [App Component (`App`)](#app-component-app)
+    - [Header Component (`Header`)](#header-component-header)
+    - [Menu Component (`Menu`)](#menu-component-menu)
+    - [Pizza Component (`Pizza`)](#pizza-component-pizza)
+    - [Footer Component (`Footer`)](#footer-component-footer)
+    - [Order Component (`Order`)](#order-component-order)
+  - [React Rendering](#react-rendering)
+- [Concepts Demonstrated](#concepts-demonstrated)
+- [Technologies Used](#technologies-used)
+- [How to Run](#how-to-run)
 
-## Available Scripts
+## Screenshot
 
-In the project directory, you can run:
+![Pizza Menu Screenshot](screenshot-pizza-menu.png)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This React web application showcases a pizza menu for "Fast React Pizza Co." It includes components for displaying pizzas, a header, and a footer that dynamically shows the current open hours.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Code Structure
 
-### `npm test`
+### Pizza Data
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The application starts with an array `pizzaData` containing details of various pizzas, including name, ingredients, price, photo path, and availability status.
 
-### `npm run build`
+### Components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### App Component (`App`)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The root component of the application, `App`, renders the entire layout including `Header`, `Menu`, and `Footer`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Header Component (`Header`)
 
-### `npm run eject`
+Displays the company name "Fast React Pizza Co." using a styled `<h1>` header.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Menu Component (`Menu`)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Dynamic Rendering**: Displays a list of pizzas fetched from `pizzaData`.
+- **Conditional Rendering**: Shows either the list of pizzas or a message when no pizzas are available.
+- **Child Component**: Uses `Pizza` component to render each pizza item.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Pizza Component (`Pizza`)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Props**: Receives `pizzaObj` as a prop containing details of each pizza.
+- **Conditional Styling**: Applies a `sold-out` class if `pizzaObj.soldOut` is true.
+- **Dynamic Content**: Displays pizza name, ingredients, price, and a "SOLD OUT" label if the pizza is not available.
 
-## Learn More
+#### Footer Component (`Footer`)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Current Time Calculation**: Determines if the restaurant is currently open based on the current time.
+- **Conditional Rendering**: Displays either an order component (`Order`) or a message about the opening hours.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Order Component (`Order`)
 
-### Code Splitting
+- **Props**: Receives `openHour` and `closeHour` to display restaurant opening hours and an "Order" button.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### React Rendering
 
-### Analyzing the Bundle Size
+The application uses `ReactDOM.createRoot` to render the `App` component into the DOM, wrapped in `React.StrictMode` for better development experience and debugging.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Concepts Demonstrated
 
-### Making a Progressive Web App
+- **Component Structure**: How components are organized to manage different parts of the UI.
+- **Props and State**: Passing data through props (`pizzaObj`, `openHour`, `closeHour`) and managing state implicitly.
+- **Conditional Rendering**: Displaying different content based on conditions (e.g., `numPizzas > 0`).
+- **Styling**: Applying styles dynamically using inline styles and conditional classes (`sold-out`).
+- **React Hooks**: Not explicitly used in this code but relevant for state management in more complex applications.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Technologies Used
 
-### Advanced Configuration
+- **React**: JavaScript library for building user interfaces.
+- **ReactDOM**: Library for rendering React components into the DOM.
+- **CSS**: Stylesheets (`index.css`) for layout and design.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## How to Run
 
-### Deployment
+To run the React Pizza Co. web application locally:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. **Clone Repository**: Clone the repository containing all project files.
 
-### `npm run build` fails to minify
+   ```bash
+   git clone https://github.com/Jonahida/react-ultimate-course-2024.git
+   cd react-ultimate-course-2024/part-01-fundamentals/03-pizza-menu/
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. **Install Dependencies**: Ensure Node.js and npm (Node Package Manager) are installed. Install project dependencies using npm.
+
+   ```bash
+   npm install
+   ```
+
+3. **Start Development Server**: Start the development server which will automatically open the application in your default web browser.
+
+   ```bash
+   npm start
+   ```
+
+4. **View Application**: Once the development server has started, open your web browser and navigate to `http://localhost:3000` (or the specified port if different) to view the React Pizza Co. web application.
