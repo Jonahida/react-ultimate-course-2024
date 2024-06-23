@@ -10,10 +10,13 @@ This React application allows users to input a bill amount and select satisfacti
 
 <hr />
 ### 1. New
+
 ![Tip Calculator Screenshot 1](screenshot1.png)
 
 <hr />
+
 ### 2. Calculate
+
 ![Tip Calculator Screenshot 2](screenshot2.png)
 
 <hr />
