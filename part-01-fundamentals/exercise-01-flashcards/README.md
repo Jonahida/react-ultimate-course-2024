@@ -8,28 +8,33 @@ This is a simple flashcard application built with React. It displays a list of q
 
 ![Flashcard Application Screenshot](./screenshot.png)
 
-## Installation
+## How to Run
 
-1. **Install dependencies**
+To run the Steps web application locally:
 
-   ```bash
-   npm install
-   ```
+1. **Clone Repository**: Clone the repository containing all project files.
 
-2. **Start the application**
+```bash
+git clone https://github.com/Jonahida/react-ultimate-course-2024.git
+cd react-ultimate-course-2024/part-01-fundamentals/exercise-01-flashcards/
+```
 
-   ```bash
-   npm start
-   ```
+2. **Install dependencies**
 
-   The application will run on `http://localhost:3000`.
+```bash
+npm install
+```
+
+3. **Start the application**
+
+```bash
+npm start
+```
+
+The application will run on `http://localhost:3000`.
 
 ## Usage
 
 - Open the application in your browser.
 - Click on a question to reveal the answer.
 - Click on the question again to hide the answer.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.

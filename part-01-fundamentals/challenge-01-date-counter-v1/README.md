@@ -8,21 +8,30 @@ This is a simple counter application built with React. It includes two counter c
 
 ![Counter Application Screenshot](./screenshot.png)
 
-## Installation
+## How to Run
 
+To run the Steps web application locally:
 
-1. **Install dependencies**
+1. **Clone Repository**: Clone the repository containing all project files.
+
+```bash
+git clone https://github.com/Jonahida/react-ultimate-course-2024.git
+cd react-ultimate-course-2024/part-01-fundamentals/challenge-01-date-counter-v1/
+```
+
+2. **Install dependencies**
+
 ```bash
 npm install
 ```
 
-2. **Start the application**
+3. **Start the application**
 
 ```bash
 npm start
 ```
 
-    The application will run on `http://localhost:3000`.
+The application will run on `http://localhost:3000`.
 
 ## Usage
 

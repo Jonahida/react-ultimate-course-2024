@@ -61,7 +61,3 @@ Uses promises and `fetch()` API to asynchronously fetch data from a remote serve
 ### 31. Asynchronous JavaScript: Async/Await
 
 Introduces async functions and `await` keyword for asynchronous operations, making asynchronous code look synchronous and easier to read.
-
----
-
-This MD file summarizes the JavaScript code snippet's main functionalities and concepts covered, providing a structured overview of its contents.

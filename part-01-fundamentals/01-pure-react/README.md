@@ -100,7 +100,3 @@ This project consists of a single `index.html` file with the following structure
 ## Dynamic Time Update
 
 - `setInterval`: Calls a function to update the time state every second, ensuring the displayed time is current.
-
-# License
-
-This project is open-source and available under the MIT License.

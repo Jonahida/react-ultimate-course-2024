@@ -8,21 +8,30 @@ This is a simple steps application built with React. It displays a series of ste
 
 ![Steps Application Screenshot](./screenshot.png)
 
-## Installation
+## How to Run
 
-1. **Install dependencies**
+To run the Steps web application locally:
 
-   ```bash
-   npm install
-   ```
+1. **Clone Repository**: Clone the repository containing all project files.
 
-2. **Start the application**
+```bash
+git clone https://github.com/Jonahida/react-ultimate-course-2024.git
+cd react-ultimate-course-2024/part-01-fundamentals/04-steps/
+```
 
-   ```bash
-   npm start
-   ```
+2. **Install dependencies**
 
-   The application will run on `http://localhost:3000`.
+```bash
+npm install
+```
+
+3. **Start the application**
+
+```bash
+npm start
+```
+
+The application will run on `http://localhost:3000`.
 
 ## Usage
 

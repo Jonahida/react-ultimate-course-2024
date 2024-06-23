@@ -1,45 +1,36 @@
-# React Web Developer Portfolio (Updated)
+# React Web Developer Portfolio V2 (Updated)
 
 This project showcases an updated version of a portfolio website built with React, showcasing skills and basic information about a web developer.
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Screenshot](#screenshot)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Technologies Used](#technologies-used)
-- [License](#license)
 
 ## Screenshot
 
 ![Portfolio Screenshot](screenshot.png)
 
-## Installation
 
-1. Clone the repository:
+## How to Run
 
+To run the Steps web application locally:
 
-   ```bash
-   git clone https://github.com/Jonahida/react-ultimate-course-2024.git
-   cd react-ultimate-course-2024/part-01-fundamentals/challenge-02-profile-card-V2/
-   ```
+1. **Clone Repository**: Clone the repository containing all project files.
 
-2. Install dependencies:
+```bash
+git clone https://github.com/Jonahida/react-ultimate-course-2024.git
+cd react-ultimate-course-2024/part-01-fundamentals/challenge-02-profile-card-V2/
+```
 
-   ```bash
-   npm install
-   ```
+2. **Install dependencies**
 
-## Usage
+```bash
+npm install
+```
 
-After completing the installation steps, you can start the application by running:
+3. **Start the application**
 
 ```bash
 npm start
 ```
 
-Open http://localhost:3000 to view it in the browser.
+The application will run on `http://localhost:3000`.
 
 ## Differences from Previous Version
 
@@ -61,7 +52,3 @@ Open http://localhost:3000 to view it in the browser.
 - React
 - HTML5
 - CSS3
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
