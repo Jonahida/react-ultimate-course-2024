@@ -1,70 +1,178 @@
-# Getting Started with Create React App
+# usePopcorn App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application for managing and displaying movie information, including a search feature and watched movie summaries.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This React application allows users to browse a collection of movies, search for specific titles, and view details of watched movies, including IMDb ratings and user ratings.
 
-### `npm start`
+## Screenshot
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### usePopcorn
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![usePopcorn Application Screenshot](screenshot.png)
 
-### `npm test`
+## How to Run
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run the usePopcorn App web application locally:
 
-### `npm run build`
+1. **Clone Repository**: Clone the repository containing all project files.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/Jonahida/react-ultimate-course-2024.git
+cd react-ultimate-course-2024/part-02-intermediate/07-usepopcorn/
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install dependencies**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+3. **Start the application**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application will run on http://localhost:3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Technologies Used
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- React
+- HTML5
+- CSS3
 
-## Learn More
+## Components
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. `App`
+   The main component that sets up the application layout and state management.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. `NavBar`
+   A navigation bar component that includes a logo and search functionality.
 
-### Code Splitting
+3. `NumResults`
+   Displays the number of search results based on the current query.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. `Search`
+   Allows users to input search queries to filter movie results.
 
-### Analyzing the Bundle Size
+5. `Main`
+   Contains the main content of the application, including boxes for displaying movie lists and watched movie summaries.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+6. `Box`
+   A collapsible box component that toggles between showing and hiding its content.
 
-### Making a Progressive Web App
+7. `MovieList`
+   Displays a list of movies based on the current search results.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+8. `Movie`
+   Represents an individual movie item with its title, year, and poster image.
 
-### Advanced Configuration
+9. `WatchedSummary`
+   Provides summary information about watched movies, including average IMDb rating, user rating, and runtime.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+10. `WatchedMovieList`
+    Displays a list of watched movies with their details.
 
-### Deployment
+11. `WatchedMovie`
+    Represents an individual watched movie item with its title, IMDb rating, user rating, and runtime.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Usage
 
-### `npm run build` fails to minify
+- The `App` initializes the state for movie data and watched movie data using `useState`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Star Rating Component
+
+A reusable React component for displaying and setting star ratings.
+
+## Overview
+
+The Star Rating component (StarRating.js) allows users to rate items using a star-based UI. It supports setting a maximum rating, custom colors, sizes, and optional messages for each star rating.
+
+## Screenshot
+
+#### StarRating
+
+![StarRating Screenshot](screenshot_star.png)
+
+## Usage
+
+To use the Star Rating component in your React application:
+
+1. **Install Dependencies**: Ensure you have react and prop-types installed in your project.
+
+```bash
+npm install react prop-types
+```
+
+2. **Import the Component**: Import the StarRating component into your application where you want to use it.
+
+```jsx
+import StarRating from "./StarRating";
+```
+
+3. **Use the Component**: Use the StarRating component with desired props to integrate star ratings into your UI.
+
+```jsx
+<StarRating
+  maxRating={5}
+  color="#fcc419"
+  size={48}
+  messages={["Terrible", "Bad", "Okay", "Good", "Great"]}
+  defaultRating={0}
+  onSetRating={(rating) => console.log(`Rated ${rating} stars`)}
+/>
+```
+
+## Props
+
+The `StarRating` component accepts the following props:
+
+- `maxRating` (number): The maximum number of stars to display (default: 5).
+- `color` (string): The color of the stars (default: "#fcc419").
+- `size` (number): The size of each star in pixels (default: 48).
+- `className` (string): Additional CSS class name for styling (default: "").
+- `messages` (array): An array of messages corresponding to each star rating (optional).
+- `defaultRating` (number): The initial rating to display (default: 0).
+- `onSetRating` (function): Callback function invoked when a rating is set (receives rating as parameter).
+
+#### Example
+
+Here's an example of how to use the StarRating component:
+
+```jsx
+import React from "react";
+import StarRating from "./StarRating";
+
+function MyComponent() {
+  const handleSetRating = (rating) => {
+    console.log(`Rated ${rating} stars`);
+    // Implement logic to save rating to database or state
+  };
+
+  return (
+    <div>
+      <h1>Rate this item</h1>
+      <StarRating
+        maxRating={5}
+        color="#fcc419"
+        size={48}
+        messages={["Terrible", "Bad", "Okay", "Good", "Great"]}
+        defaultRating={0}
+        onSetRating={handleSetRating}
+      />
+    </div>
+  );
+}
+
+export default MyComponent;
+```
+
+## Components
+
+`StarRating`
+The main component that handles rendering of stars based on user interactions and props.
+
+`Star`
+A sub-component responsible for rendering individual star icons with hover and click interactions.

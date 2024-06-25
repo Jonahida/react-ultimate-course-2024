@@ -16,9 +16,6 @@ To run the TextExpander App web application locally:
 
 1. **Clone Repository**: Clone the repository containing all project files.
 
-
-1. **Clone Repository**: Clone the repository containing all project files.
-
 ```bash
 git clone https://github.com/Jonahida/react-ultimate-course-2024.git
 cd react-ultimate-course-2024/part-02-intermediate/challenge-01-text-expander/
