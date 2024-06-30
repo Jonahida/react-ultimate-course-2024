@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Currency Converter App
+A React application for converting currency using the Frankfurter API. Users can enter an amount, select the currency to convert from and to, and get the converted amount.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Overview
+This application uses the Frankfurter API to convert currency from one type to another based on user input. It provides real-time conversion rates and updates the output dynamically.
 
-In the project directory, you can run:
+## Screenshot
 
-### `npm start`
+![Currency Converter Application Screenshot](screenshot.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
+- Convert currency with real-time exchange rates from the Frankfurter API
+- Input amount to convert
+- Select currency type to convert from and to
+- Display converted amount
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run the usePopcorn App web application locally:
 
-### `npm run build`
+1. **Clone Repository**: Clone the repository containing all project files.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/Jonahida/react-ultimate-course-2024.git
+cd react-ultimate-course-2024/part-02-intermediate/challenge-01-currency-converter/
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install dependencies**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+3. **Start the application**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application will run on http://localhost:3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
+1. **Enter Amount**: Input the amount you want to convert.
+2. **Select From Currency**: Choose the currency type to convert from using the dropdown.
+3. **Select To Currency**: Choose the currency type to convert to using the dropdown.
+4. The converted amount will be displayed below.
+5. 
+## Components
+## App Component
+Handles state management for amount, fromType (currency to convert from), toType (currency to convert to), and result (converted amount).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## SelectCurrency Component
+Dropdown component for selecting currency types (USD, EUR, CAD, INR).
 
-## Learn More
+## API Configuration
+The application uses the Frankfurter API for fetching real-time exchange rates. Ensure the API URL and parameters are correctly set in the `fetch` function inside `useEffect` in App.js:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```javascript
+fetch(`https://api.frankfurter.app/latest?amount=${amount}&from=${fromType}&to=${toType}`)
+```
