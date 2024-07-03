@@ -176,3 +176,85 @@ The main component that handles rendering of stars based on user interactions an
 
 `Star`
 A sub-component responsible for rendering individual star icons with hover and click interactions.
+
+# Comparison of App.js Versions
+
+This section summarizes the main differences between different versions of the `App.js` file.
+
+## App.js
+
+### State Management
+- Uses `useState` for managing query, movies, isLoading, error, and selectedId.
+- Uses `useReducer` for managing watched movies.
+
+### Effects
+- Fetches movies using `useEffect` and `fetch` API.
+- Uses `localStorage` for storing and retrieving watched movies.
+
+### Components
+- Contains components for search input (`Search`), movie list (`MovieList`), movie details (`MovieDetails`), and watched movies list (`WatchedMoviesList`).
+- Includes `Loader` and `ErrorMessage` components.
+
+### Features
+- Allows searching for movies, viewing movie details, adding movies to watched list, and deleting movies from watched list.
+- Uses `localStorage` for persistent storage of watched movies.
+
+## App-v1.js
+
+### State Management
+- Uses `useState` for managing query, movies, isLoading, error, and selectedId.
+- Uses `useState` for watched movies and initializes with an empty array.
+
+### Effects
+- Fetches movies using `useEffect` and `fetch` API.
+- Uses `localStorage` for storing and retrieving watched movies.
+
+### Components
+- Contains components for search input (`Search`), movie list (`MovieList`), movie details (`MovieDetails`), and watched movies list (`WatchedMoviesList`).
+- Includes `Loader`, `ErrorMessage`, and `StarRating` components.
+
+### Features
+- Allows searching for movies, viewing movie details, adding movies to watched list, and deleting movies from watched list.
+- Uses `localStorage` for persistent storage of watched movies.
+
+## App-v2.js
+
+### State Management
+- Uses `useState` for managing query, movies, isLoading, error, and selectedId.
+- Uses `useState` for watched movies and initializes with an empty array.
+
+### Effects
+- Fetches movies using `useEffect` and `fetch` API.
+- Uses `localStorage` for storing and retrieving watched movies.
+
+### Components
+- Contains components for search input (`Search`), movie list (`MovieList`), movie details (`MovieDetails`), and watched movies list (`WatchedMoviesList`).
+- Includes `Loader`, `ErrorMessage`, and `StarRating` components.
+
+### Features
+- Allows searching for movies, viewing movie details, adding movies to watched list, and deleting movies from watched list.
+- Uses `localStorage` for persistent storage of watched movies.
+
+## App-v3.js
+
+### State Management
+- Uses `useState` for managing query, movies, isLoading, error, and selectedId.
+- Uses `useState` for watched movies and initializes with `localStorage` value or empty array.
+
+### Effects
+- Fetches movies using `useEffect` and `fetch` API with abort controller for cleanup.
+- Uses `localStorage` for storing and retrieving watched movies.
+- Updates document title dynamically.
+
+### Components
+- Contains components for search input (`Search`), movie list (`MovieList`), movie details (`MovieDetails`), watched movie summary (`WatchedSummary`), watched movies list (`WatchedMoviesList`), and collapsible sections (`Box`).
+- Includes `Loader`, `ErrorMessage`, `StarRating`, and `Logo` components.
+
+### Features
+- Allows searching for movies, viewing movie details, adding movies to watched list, and deleting movies from watched list.
+- Dynamically updates document title based on selected movie.
+- Organizes content into collapsible sections (`Box` component) for improved user experience.
+
+---
+
+This comparison outlines the evolution and differences between different versions of `App.js`, focusing on state management, effects, component structure, and additional features introduced in each iteration.
